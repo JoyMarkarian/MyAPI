@@ -12,22 +12,30 @@ const welcome = (req, res) => {
 
 app.get("/", welcome);
 
-
 const bookingHandlers = require("./bookingHandlers");
-
-app.post("/api/booking", bookingHandlers.postBooking);
-
-
-app.put("/api/booking", bookingHandlers.updateBooking);
-app.put("/api/booking/:id", bookingHandlers.updateBooking);
-
+const customersHandlers = require("./customersHandlers");
+const stayHandlers = require("./stayHandlers");
 
 app.get("/api/booking", bookingHandlers.getBookings);
 app.get("/api/booking/:id", bookingHandlers.getBookingById);
 
+app.get("/api/customers", customersHandlers.getCustomers);
+app.get("/api/customers/:id", customersHandlers.getCustomerById);
+
+app.get("/api/stay", stayHandlers.getStays);
+app.get("/api/stay/:id", stayHandlers.getStayById);
+
+app.post("/api/booking", bookingHandlers.postBooking);
+app.post("/api/customers", customersHandlers.postCustomer);
+app.post("/api/stay", stayHandlers.postStay);
+
+app.put("/api/booking/:id", bookingHandlers.updateBooking);
+app.put("/api/customers/:id", customersHandlers.updateCustomer);
+app.put("/api/stay/:id", stayHandlers.updateStay);
 
 app.delete("/api/booking/:id", bookingHandlers.deleteBooking);
-
+app.delete("/api/customers/:id", customersHandlers.deleteCustomer);
+app.delete("/api/stay/:id", stayHandlers.deleteStay);
 
 app.listen(port, (err) => {
   if (err) {

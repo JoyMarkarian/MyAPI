@@ -7,8 +7,8 @@ DROP TABLE IF EXISTS customers;
 CREATE TABLE
     customers (
         id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-        firstname VARCHAR (100) NOT NULL,
-        lastname VARCHAR (100) NOT NULL,
+        firstname NVARCHAR (100) NOT NULL,
+        lastname NVARCHAR (100) NOT NULL,
         mailAdress VARCHAR (100) NOT NULL
     );
 
@@ -46,7 +46,7 @@ VALUES (
         "emmanuelmartinez@mail.com"
     ), (
         6,
-        "Gaëtan",
+        N "Gaëtan",
         "Lemoine",
         "gaetanlemoine@mail.com"
     ), (
@@ -71,7 +71,7 @@ VALUES (
         "sylvaintormo@mail.com"
     ), (
         11,
-        "Sébastien",
+        N "Sébastien",
         "Petaccia",
         "sebastienpetaccia@mail.com"
     ), (
