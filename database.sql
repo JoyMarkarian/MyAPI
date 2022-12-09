@@ -162,3 +162,12 @@ INSERT INTO
         bookingDate
     )
 VALUES (1, 11, 3, "24/11/2022"), (2, 14, 5, "05/10/2022"), (3, 2, 1, "15/11/2022"), (4, 10, 3, "18/09/2022"), (5, 9, 1, "08/12/2022"), (6, 7, 3, "11/10/2022"), (7, 12, 4, "25/11/2022"), (8, 14, 4, "11/09/2022"), (9, 4, 2, "25/10/2022"), (10, 3, 5, "20/11/2022");
+
+SELECT
+    firstname,
+    lastname,
+    country,
+    departureDate
+FROM customers
+    INNER JOIN booking ON customers.id = booking.customers_id
+    INNER JOIN booking ON stay.id = booking.stay_id

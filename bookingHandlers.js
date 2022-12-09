@@ -2,7 +2,7 @@ const database = require("./db");
 
 const getBookings = (req, res) => {
   database
-    .query("select * from booking")
+    .query("SELECT firstname, lastname, country, departureDate, returnDate, price FROM customers INNER JOIN booking ON customers.id = booking.customers_id INNER JOIN stay ON stay.id = booking.stay_id ORDER BY departureDate ASC")
     .then(([booking]) => {
       res.json(booking);
     })
